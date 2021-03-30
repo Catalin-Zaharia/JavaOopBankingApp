@@ -131,4 +131,12 @@ public class AccountService {
             out.println("Nu aveti fonduri suficiente pentru a efectua transferul");
         }
     }
+
+    public static void getAllTransfers(Account account){
+        ArrayList<Transfer> transfers = account.getTransfers();
+
+        for (int i=0; i<transfers.size(); i++){
+            CurrencyService.printTransfer(transfers.get(i));
+        }
+    }
 }

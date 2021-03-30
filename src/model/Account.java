@@ -17,6 +17,7 @@ public class Account {
         this.setAmount(startingAmount);
         this.iban =iban;
         this.cards= new ArrayList<Card>();
+        this.transfers = new ArrayList<Transfer>();
     }
 
     public ArrayList<Card> getAllCards() {

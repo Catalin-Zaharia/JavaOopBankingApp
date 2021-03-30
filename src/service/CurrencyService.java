@@ -22,4 +22,12 @@ public class CurrencyService {
         toAccount.addTransfer(transfer);
     }
 
+    public static void printTransfer(Transfer transfer){
+        double amountSent= transfer.getAmountSent();
+        double amountReceived = transfer.getAmountReceived();
+        String fromUser = transfer.getFromAccount().getOwner().getFirstName()+" "+transfer.getFromAccount().getOwner().getLastName();
+        String toUser = transfer.getToAccount().getOwner().getFirstName()+" "+transfer.getToAccount().getOwner().getLastName();
+        System.out.println(String.format(fromUser+" a trimis %f catre "+toUser+ " | "+toUser+" a primit %f de la "+fromUser, amountSent, amountReceived));
+    }
+
 }
