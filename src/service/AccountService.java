@@ -84,8 +84,11 @@ public class AccountService {
         scanner = new Scanner(in);
         String response = scanner.nextLine();
 
-        if (isNumeric(response)){
+        if (isNumeric(response) && response.length()==4){
             card.setPin(response);
+        }
+        else{
+            card.setPin("0000");
         }
     }
 
