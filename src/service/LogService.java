@@ -9,16 +9,9 @@ import java.util.Date;
 public class LogService {
 
     FileWriter file;
-    SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
+    SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss");
     Date date = new Date(System.currentTimeMillis());
 
-    {
-        try {
-            file = new FileWriter("resources/outputs/methodLogs.csv");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
     private static LogService single_instance =null;
 
@@ -34,8 +27,11 @@ public class LogService {
 
     public void logThis(String text){
         try {
-            file.write(text + " "+ date);
+            file = new FileWriter("resources/outputs/methodLogs.csv", true);
+            file.write(text + " "+ date+'\n');
+            file.close();
         } catch (IOException e) {
+            System.out.println("An error occurred.");
             e.printStackTrace();
         }
     }

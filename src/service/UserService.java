@@ -19,6 +19,7 @@ public class UserService {
     }
     
     public int getNewUserId(){
+        LogService.getInstance().logThis("getNewUserId");
         idCounter+=1;
         return idCounter;
     }

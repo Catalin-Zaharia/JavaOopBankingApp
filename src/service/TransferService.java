@@ -24,6 +24,7 @@ public class TransferService {
     }
 
     public void makeTransfer(double amountSent, Account fromAccount, Account toAccount){
+        LogService.getInstance().logThis("makeTransfer");
         double amountReceived = CurrencyService.getInstance().convertCurrency(amountSent, fromAccount.getCurrency(), toAccount.getCurrency());
 
         Transfer transfer = new Transfer(amountSent, amountReceived, fromAccount, toAccount);
@@ -36,6 +37,7 @@ public class TransferService {
     }
 
     public void printTransfer(Transfer transfer){
+        LogService.getInstance().logThis("printTransfer");
         double amountSent= transfer.getAmountSent();
         double amountReceived = transfer.getAmountReceived();
         String fromUser = transfer.getFromAccount().getOwner().getFirstName()+" "+transfer.getFromAccount().getOwner().getLastName();
@@ -44,6 +46,7 @@ public class TransferService {
     }
 
     public  void transferFunds(double amountSent, Account fromAccount, Account toAccount){
+        LogService.getInstance().logThis("transferFunds");
         if (fromAccount.getAmount()>=amountSent){
             System.out.printf("Doriti sa transferati %f catre "+toAccount.getOwner().getFirstName()+ " "+ toAccount.getOwner().getLastName()+ "?%n", amountSent);
             scanner = new Scanner(System.in);
@@ -65,6 +68,7 @@ public class TransferService {
     }
 
     public  void bulkTransfer(double amountSent, Account fromAccount, ArrayList<Account> toAccounts){
+        LogService.getInstance().logThis("bulkTransfer");
         if (fromAccount.getAmount()>=amountSent*toAccounts.size()){
             System.out.printf("Doriti sa transferati cate %f catre persoanele din lista?%n", amountSent);
             scanner = new Scanner(System.in);
@@ -87,6 +91,7 @@ public class TransferService {
     }
 
     public  void getAllTransfers(Account account){
+        LogService.getInstance().logThis("getAllTransfers");
         List<Transfer> transfers = account.getTransfers();
 
         for (Transfer transfer : transfers) {

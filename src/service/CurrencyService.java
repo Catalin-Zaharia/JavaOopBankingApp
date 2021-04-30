@@ -17,6 +17,7 @@ public class CurrencyService {
     }
     
     public  double convertCurrency(double amount, Currency fromCurrency, Currency toCurrency){
+        LogService.getInstance().logThis("convertCurrency");
         return amount*fromCurrency.getExchangeRate()/toCurrency.getExchangeRate();
     }
 

@@ -26,16 +26,19 @@ public class CardService {
     }
     
     public  String getNewCardNumber(){
+        LogService.getInstance().logThis("getNewCardNumber");
         cardCounter+=1;
         return String.format("%016d", cardCounter);
     }
 
     public  String getNewCardSecurity(){
+        LogService.getInstance().logThis("getNewCardSecurity");
         Random rand = new Random();
         return String.format("%03d",rand.nextInt(1000));
     }
 
     public  void activateCard(Account account, String type){
+        LogService.getInstance().logThis("activateCard");
 
         String number = CardService.getInstance().getNewCardNumber();
         String security = CardService.getInstance().getNewCardSecurity();
@@ -53,6 +56,7 @@ public class CardService {
     }
 
     public  void voidCard(Account account, int cardIndex){
+        LogService.getInstance().logThis("voidCard");
         System.out.println("Doriti sa invalidati permanent cardul?");
         scanner = new Scanner(System.in);
         String response = scanner.nextLine();
@@ -67,6 +71,7 @@ public class CardService {
     }
 
     public  void voidCard(Account account, Card card){
+        LogService.getInstance().logThis("voidCard");
         System.out.println("Doriti sa invalidati permanent cardul?");
         scanner = new Scanner(System.in);
         String response = scanner.nextLine();
@@ -93,6 +98,7 @@ public class CardService {
     }
 
     public  void changePin(Account account, Card card){
+        LogService.getInstance().logThis("changePin");
         System.out.println("Care este pinul dorit? (4 cifre)");
         scanner = new Scanner(System.in);
         String response = scanner.nextLine();

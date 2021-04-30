@@ -22,13 +22,14 @@ public class AccountService {
     }
 
     public Account createAccount(User user, Currency currency, double startingAmount){
+        LogService.getInstance().logThis("createAccount");
         Random rand = new Random();
         String iban = String.format("RO00BANK292fa1904h9x%d", rand.nextInt(1000));
         return new Account(user, currency, startingAmount, iban);
     }
 
     public Account voidAccount(){
-
+        LogService.getInstance().logThis("voidAccount");
         return null;
     }
 
