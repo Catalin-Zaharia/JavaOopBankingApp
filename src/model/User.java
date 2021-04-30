@@ -7,11 +7,12 @@ public class User {
     private int id;
     private String firstName;
     private String lastName;
+    private UserService service = UserService.getInstance();
 
     public User(String firstName, String lastName){
         this.firstName = firstName;
         this.lastName = lastName;
-        this.id = UserService.getNewUserId();
+        this.id = service.getNewUserId();
     }
 
     public void setFirstName(String firstName){

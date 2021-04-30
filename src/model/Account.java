@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Account {
     
@@ -8,19 +9,19 @@ public class Account {
     private User owner;
     private Currency currency;
     private double amount;
-    private ArrayList<Card> cards;
-    private ArrayList<Transfer> transfers;
+    private List<Card> cards;
+    private List<Transfer> transfers;
     
     public Account(User owner, Currency currency, double startingAmount, String iban) {
         this.owner = owner;
         this.currency = currency;
         this.setAmount(startingAmount);
         this.iban =iban;
-        this.cards= new ArrayList<Card>();
-        this.transfers = new ArrayList<Transfer>();
+        this.cards= new ArrayList<>();
+        this.transfers = new ArrayList<>();
     }
 
-    public ArrayList<Card> getAllCards() {
+    public List<Card> getAllCards() {
         return cards;
     }
 
@@ -63,7 +64,7 @@ public class Account {
         this.amount = amount;
     }
 
-    public ArrayList<Transfer> getTransfers() {
+    public List<Transfer> getTransfers() {
         return transfers;
     }
 
