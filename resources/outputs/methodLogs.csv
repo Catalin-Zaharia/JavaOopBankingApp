@@ -18,3 +18,11 @@ makeTransfer Fri Apr 30 21:29:48 EEST 2021
 convertCurrency Fri Apr 30 21:29:48 EEST 2021
 getAllTransfers Fri Apr 30 21:29:48 EEST 2021
 printTransfer Fri Apr 30 21:29:48 EEST 2021
+getNewUserId Mon May 24 14:37:35 EEST 2021
+createAccount Mon May 24 14:37:35 EEST 2021
+getNewUserId Mon May 24 14:37:35 EEST 2021
+createAccount Mon May 24 14:37:35 EEST 2021
+activateCard Mon May 24 14:37:35 EEST 2021
+getNewCardNumber Mon May 24 14:37:35 EEST 2021
+getNewCardSecurity Mon May 24 14:37:35 EEST 2021
+changePin Mon May 24 14:37:35 EEST 2021
